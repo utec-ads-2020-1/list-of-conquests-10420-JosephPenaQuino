@@ -19,19 +19,11 @@ int main()
         getline(std::cin, current_line);
         std::istringstream cl_ss(current_line);
 
-        // Read country
         cl_ss >> current_word;
         std::string current_country = current_word;
         if (country_names_set.find(current_country)==country_names_set.end())
             country_names_set.insert(std::pair<std::string, int>(current_country, 0));
-
-        // Read names
-        while(cl_ss >> current_word)
-        {
-            country_names_set[current_country]++;
-        }
-        // Print results
-        // std::cout << current_country << " " << country_names_set[current_country] <<  std::endl;
+        country_names_set[current_country]++;
     }
     
     for (itr = country_names_set.begin(); itr != country_names_set.end(); ++itr) 
